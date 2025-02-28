@@ -76,7 +76,7 @@ const Collection = () => {
     <div className="flex flex-col sm:flex-row gap-1 sm:gap-10 pt-10 border-t">
       {/* Filter section */}
       <div className="min-w-60">
-        <p onClick={() => setShowFilter(!showFilter)} className="my-2 text-x1 flex items-center cursor-pointer gap-2">FILTERS</p>
+        <p onClick={() => setShowFilter(!showFilter)} className="my-2 text-xl flex items-center cursor-pointer gap-2">FILTERS</p>
         <img className={`h-3 sm:hidden ${showFilter ? 'rotate-180' : ''}`} src={assets.dropdown_icon} alt="" />
          {/* Category Filter */}
          <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
@@ -113,7 +113,7 @@ const Collection = () => {
 
       {/* Right Side --Products */}
       <div className="flex-1">
-        <div className="flex justify-between text-base sm:text-2x1 mb-4">
+        <div className="flex justify-between text-base sm:text-2xl mb-4">
           <Title text1="ALL" text2="COLLECTION" />
           {/* Produt Sort */}
           <select onChange={(e) => setSortType(e.target.value)} className="border border-gray-300 text-sm px-2">
