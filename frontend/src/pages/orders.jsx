@@ -1,7 +1,9 @@
 
 const Orders = () => {
   return (
-    <div>Orders</div>
+    <div className="">
+      
+    </div>
   )
 }
 
