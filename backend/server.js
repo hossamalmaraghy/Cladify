@@ -6,22 +6,29 @@ import connectCloudinary from './config/couldinary.js'
 import userRouter from './routes/userRoute.js'
 import productRouter from './routes/productRoute.js'
 
-// App Config
-const app = express()
-const port = process.env.PORT  || 4000
-connectDB()
-connectCloudinary()
+// Wrap initialization in an async function
+const startServer = async () => {
+  await connectDB();           // Ensure DB is connected
+  await connectCloudinary();   // Ensure Cloudinary is configured
 
-// Middlewares
-app.use(express.json())
-app.use(cors())
+  const app = express();
+  const port = process.env.PORT || 4000;
 
-// API Endpoints
-app.use('/api/user', userRouter)
-app.use('/api/product', productRouter)
+  // Middlewares
+  app.use(express.json());
+  app.use(cors());
 
-app.get('/', (req, res) => {
-    res.send("API Working")
-})
+  // API Endpoints
+  app.use('/api/user', userRouter);
+  app.use('/api/product', productRouter);
 
-app.listen(port, () => console.log('Server Started On PORT : '+ port))
+  app.get('/', (req, res) => {
+    res.send("API Working");
+  });
+
+  app.listen(port, () =>
+    console.log('Server Started On PORT : ' + port)
+  );
+};
+
+startServer();
