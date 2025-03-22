@@ -10,8 +10,8 @@ import orderRouter from './routes/orderRoute.js'
 
 // Wrap initialization in an async function
 const startServer = async () => {
-  await connectDB();           // Ensure DB is connected
-  await connectCloudinary();   // Ensure Cloudinary is configured
+  await connectDB();
+  await connectCloudinary();
 
   const app = express();
   const port = process.env.PORT || 4000;

@@ -33,6 +33,7 @@ const Login = () => {
           toast.error(response.data.message);
         }
       }
+      console.log("Token:", token);
       
     } catch (error) {
       console.log(error);
